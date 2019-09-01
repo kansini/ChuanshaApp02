@@ -6,7 +6,14 @@
 
 <style lang="scss">
     #app {
+        width: 100%;
+        height: 100vh;
 
+    }
+
+    body {
+        background: url("./assets/img/mainBg.jpg") no-repeat center;
+        background-size: 100% 100%;
     }
 
 </style>
