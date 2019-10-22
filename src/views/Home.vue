@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <div class="logo"></div>
+        <div class="logo" @click="toggleFullscreen"></div>
         <div class="mainNav">
             <div class="left">
                 <div class="video"></div>
@@ -40,10 +40,22 @@
 </template>
 
 <script>
-
+    import screenfull from 'screenfull'
     export default {
         name: 'home',
-        components: {}
+        components: {},
+        data() {
+            return {
+                isFullScreen: false
+            }
+        },
+        methods: {
+            toggleFullscreen() {
+                screenfull.toggle()
+                this.isFullScreen = !this.isFullScreen
+            }
+
+        }
     }
 </script>
 <style lang="scss" scoped>
@@ -58,6 +70,7 @@
             padding: calc(80rem / 96) 0;
             background: url("../assets/img/logo.png") no-repeat center;
             background-size: 100%;
+            cursor: pointer;
         }
 
         .mainNav {
