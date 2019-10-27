@@ -41,7 +41,7 @@
         width: calc(1318rem / 96);
         height: calc(160rem / 96);
         margin: 0 auto;
-        padding: calc(80rem / 96) 0;
+        padding: calc(80rem / 96) 0 calc(0rem / 96) 0;
         background: url("./assets/img/logo.png") no-repeat center;
         background-size: 100%;
         cursor: pointer;

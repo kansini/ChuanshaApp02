@@ -1,13 +1,12 @@
 <template>
     <div class="home">
-
         <div class="mainNav">
             <div class="left">
                 <div class="video"></div>
             </div>
             <div class="right">
                 <div class="row">
-                    <router-link tag="div" to="/" class="nav-item-01">
+                    <router-link tag="div" to="/regionalpb" class="nav-item-01">
                         区域化党建
                     </router-link>
                     <router-link tag="div" to="/" class="nav-item-02">
@@ -51,11 +50,10 @@
         width: 100%;
         height: 100vh;
 
-
         .mainNav {
             width: calc(1680rem / 96);
             height: calc(600rem / 96);
-            margin: 0 auto;
+            margin: calc(96rem / 96) auto;
 
             &::after {
                 display: table;

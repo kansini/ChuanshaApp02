@@ -24,6 +24,122 @@ a:active {
   outline: 0;
 }
 
+/* 基础布局 */
+.row {
+  width: 100%;
+  margin: 0 auto calc(24rem / 96) auto;
+  padding: 0 calc(12rem / 96);
+  box-sizing: border-box;
+}
+
+.row::after {
+  display: table;
+  content: '';
+  clear: both;
+}
+
+[class^="col-"] {
+  float: left;
+  padding: 0 calc(12rem / 96);
+  box-sizing: border-box;
+}
+
+.col-1 {
+  width: calc(100% / 24);
+}
+
+.col-2 {
+  width: calc((100% / 24) * 2);
+}
+
+.col-3 {
+  width: calc((100% / 24) * 3);
+}
+
+.col-4 {
+  width: calc((100% / 24) * 4);
+}
+
+.col-5 {
+  width: calc((100% / 24) * 5);
+}
+
+.col-6 {
+  width: calc((100% / 24) * 6);
+}
+
+.col-7 {
+  width: calc((100% / 24) * 7);
+}
+
+.col-8 {
+  width: calc((100% / 24) * 8);
+}
+
+.col-9 {
+  width: calc((100% / 24) * 9);
+}
+
+.col-10 {
+  width: calc((100% / 24) * 10);
+}
+
+.col-11 {
+  width: calc((100% / 24) * 11);
+}
+
+.col-12 {
+  width: 50%;
+}
+
+.col-13 {
+  width: calc((100% / 24) * 13);
+}
+
+.col-14 {
+  width: calc((100% / 24) * 14);
+}
+
+.col-15 {
+  width: calc((100% / 24) * 15);
+}
+
+.col-16 {
+  width: calc((100% / 24) * 16);
+}
+
+.col-17 {
+  width: calc((100% / 24) * 17);
+}
+
+.col-18 {
+  width: calc((100% / 24) * 18);
+}
+
+.col-19 {
+  width: calc((100% / 24) * 19);
+}
+
+.col-20 {
+  width: calc((100% / 6) * 5);
+}
+
+.col-21 {
+  width: calc((100% / 8) * 7);
+}
+
+.col-22 {
+  width: calc((100% / 24) * 22);
+}
+
+.col-23 {
+  width: calc((100% / 24) * 23);
+}
+
+.col-24 {
+  width: 100%;
+}
+
 .fadeIn-enter-active,
 .fadeIn-leave-active {
   transition: all ease 1s;
