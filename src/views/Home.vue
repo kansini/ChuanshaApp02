@@ -1,6 +1,6 @@
 <template>
     <div class="home">
-        <div class="logo" @click="toggleFullscreen"></div>
+
         <div class="mainNav">
             <div class="left">
                 <div class="video"></div>
@@ -10,9 +10,9 @@
                     <router-link tag="div" to="/" class="nav-item-01">
                         区域化党建
                     </router-link>
-                    <div class="nav-item-02">
+                    <router-link tag="div" to="/" class="nav-item-02">
                         要闻速递
-                    </div>
+                    </router-link>
                 </div>
                 <div class="row">
                     <div class="nav-item-03">
@@ -40,22 +40,10 @@
 </template>
 
 <script>
-    import screenfull from 'screenfull'
     export default {
         name: 'home',
-        components: {},
-        data() {
-            return {
-                isFullScreen: false
-            }
-        },
-        methods: {
-            toggleFullscreen() {
-                screenfull.toggle()
-                this.isFullScreen = !this.isFullScreen
-            }
+        components: {}
 
-        }
     }
 </script>
 <style lang="scss" scoped>
@@ -63,15 +51,6 @@
         width: 100%;
         height: 100vh;
 
-        .logo {
-            width: calc(1318rem / 96);
-            height: calc(160rem / 96);
-            margin: 0 auto;
-            padding: calc(80rem / 96) 0;
-            background: url("../assets/img/logo.png") no-repeat center;
-            background-size: 100%;
-            cursor: pointer;
-        }
 
         .mainNav {
             width: calc(1680rem / 96);
