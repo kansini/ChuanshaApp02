@@ -20,12 +20,12 @@
                     </router-link>
                 </div>
                 <div class="row">
-                    <div class="nav-item-03">
-                        <div class="icon" style="">
+                    <router-link tag="div" to="/" class="nav-item-03">
+                        <div class="icon">
                             <img src="../../public/img/icons/ico-liangxin.svg" alt="">
                         </div>
                         “两新”党建
-                    </div>
+                    </router-link>
                     <div class="nav-item-right">
                         <div class="nav-item-04">
                             <div class="icon">
@@ -34,12 +34,18 @@
                             宣传统战
                         </div>
                         <div class="nav-item-05">
+                            <div class="icon">
+                                <img src="../../public/img/icons/ico-guestbook.svg" alt="">
+                            </div>
                             留言堂
                         </div>
                         <div class="row">
-                            <div class="nav-item-06">
+                            <router-link tag="div"  to="/" class="nav-item-06">
+                                <div class="icon">
+                                    <img src="../../public/img/icons/ico-so.svg" alt="">
+                                </div>
                                 社会组织党建
-                            </div>
+                            </router-link>
                         </div>
                     </div>
 
@@ -116,6 +122,7 @@
                         position: relative;
                         border-radius: 10px;
                         color: #fff;
+                        font-family: "fzht";
                         font-size: calc(30rem / 96);
                         cursor: pointer;
                         text-align: center;
@@ -142,8 +149,7 @@
                     }
 
                     .nav-item-01 {
-                        position: relative;
-                        width: calc(538rem / 96);
+                         width: calc(538rem / 96);
                         height: calc(230rem / 96);
                         line-height: calc(230rem / 96);
                         margin-right: calc(24rem / 96);
@@ -220,9 +226,14 @@
                     .nav-item-03 {
                         width: calc(314rem / 96);
                         height: calc(346rem / 96);
-                        //line-height: calc(500rem / 96);
                         margin-right: calc(24rem / 96);
-                        background: #f07879;
+                        background: rgba(239, 95, 96, .95);
+                        box-shadow: 0 0 20px rgba(239, 95, 96, .5);
+
+                        &:hover {
+                            background: rgba(239, 95, 96, 1);
+                            box-shadow: 0 0 20px rgba(239, 95, 96, 1);
+                        }
 
                         .icon {
                             margin: calc(64rem / 96) auto calc(32rem / 96);
@@ -256,17 +267,17 @@
                         margin-right: calc(24rem / 96);
                         background: rgba(63, 202, 172, .8);
                         margin-bottom: calc(24rem / 96);
-                        box-shadow: 0 0 20px rgba(63, 202, 172, .6);
+                        box-shadow: 0 0 10px rgba(63, 202, 172, .5);
 
                         &:hover {
                             background: rgba(63, 202, 172, 1);
                             box-shadow: 0 0 30px rgba(63, 202, 172, 1);
                         }
+
                         .icon {
                             width: calc(64rem / 96);
                             height: calc(64rem / 96);
                             margin: calc(24rem / 96) auto calc(16rem / 96);
-
                         }
 
                         &::after {
@@ -281,16 +292,42 @@
                     .nav-item-05 {
                         width: calc(198rem / 96);
                         height: calc(166rem / 96);
-                        line-height: calc(240rem / 96);
-                        background: #8479f1;
+                        background: rgba(131, 121, 241, .9);
                         margin-bottom: calc(24rem / 96);
+                        box-shadow: 0 0 10px rgba(131, 121, 241, .5);
+
+                        &:hover {
+                            background: rgba(131, 121, 241, 1);
+                            box-shadow: 0 0 30px rgba(131, 121, 241, 1);
+                        }
+
+                        .icon {
+                            width: calc(60rem / 96);
+                            height: calc(60rem / 96);
+                            margin: calc(24rem / 96) auto calc(16rem / 96);
+                        }
                     }
 
                     .nav-item-06 {
                         width: calc(420rem / 96);
                         height: calc(152rem / 96);
                         line-height: calc(152rem / 96);
-                        background: #ce87c2;
+                        background: rgba(206, 135, 194, .9);
+                        padding-left: calc(80rem / 96);
+                        box-sizing: border-box;
+                        box-shadow: 0 0 10px rgba(206, 135, 194, .5);
+
+                        &:hover {
+                            background: rgba(206, 135, 194, 1);
+                            box-shadow: 0 0 30px rgba(206, 135, 194, 1);
+                        }
+                        .icon{
+                            position: absolute;
+                            width: calc(72rem / 96);
+                            height:  calc(72rem / 96);
+                            top: calc(-40rem / 96);
+                            left: calc(64rem / 96);
+                        }
 
                         &::after {
                             top: calc(-160rem / 96);
