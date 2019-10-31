@@ -39,9 +39,9 @@ export default new Router({
                     component: () => import('@/views/regionalPartyBuilding/Programme')
                 },
                 {
-                    path: '/eventHighlight',
-                    name: 'eventHighlight',
-                    component: () => import('@/views/regionalPartyBuilding/EventHighlight')
+                    path: '/activityHighlight',
+                    name: 'activityHighlight',
+                    component: () => import('@/views/regionalPartyBuilding/ActivityHighlight')
                 }
             ]
         }

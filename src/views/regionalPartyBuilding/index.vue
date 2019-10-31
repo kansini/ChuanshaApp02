@@ -10,13 +10,17 @@
                 </div>
             </div>
             <div class="col-19">
-                <div class="content" style="width: 100%;height: calc(734rem / 96);background: #ff3366">
+                <div class="content" style="width: 100%;height: calc(734rem / 96);background: rgba(255,255,255,.8)">
                     <router-view></router-view>
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="bottom-nav" style="width: 100%;height: calc(112rem / 96);background: #ff3333;"></div>
+            <div class="bottom-nav" >
+                <router-link tag="div" :to="item.path" class="bottom-nav-item" v-for="(item,index) in bottomNav" :key="index">
+                    {{item.name}}
+                </router-link>
+            </div>
         </div>
 
     </div>
@@ -46,15 +50,53 @@
                     },
                     {
                         name: "区域化党建活动集锦",
-                        path: '/eventHighlight'
+                        path: '/activityHighlight'
+                    }
+                ],
+                bottomNav: [
+                    {
+                        name: "首页",
+                        path: '/'
+                    },
+                    {
+                        name: "区域化党建",
+                        path: '/regionalpb'
+                    },
+                    {
+                        name: "要闻速递",
+                        path: '/news'
+                    },
+                    {
+                        name: "'两新'党建",
+                        path: '/liangxin'
+                    },
+                    {
+                        name: "统战宣传",
+                        path: '/tongzhan'
+                    },
+                    {
+                        name: "留言堂",
+                        path: '/guestBook'
+                    },
+                    {
+                        name: "社会组织党建",
+                        path: '/socialOrganisation'
                     }
                 ]
+
             }
         },
     }
 </script>
 
 <style lang="scss" scoped>
+    .row {
+        width: 100%;
+        margin: 0 auto calc(24rem / 96) auto;
+        padding: 0 calc(12rem / 96);
+        box-sizing: border-box;
+    }
+
     #regionalPB {
         width: calc(1704rem / 96);
         height: calc(870rem / 96);
@@ -67,7 +109,7 @@
             justify-content: space-between;
             width: 100%;
             height: calc(734rem / 96);
-            font-size: calc(28rem / 96);
+            font-size: calc(24rem / 96);
             color: #000;
 
 
@@ -76,21 +118,40 @@
                 height: calc(104rem / 96);
                 line-height: calc(104rem / 96);
                 text-align: center;
-                background: #FFFFFF;
-                border: 1px solid #F84141;
+                color: #666;
+                background: rgba(255,255,255,.8);
+                box-shadow: 0px 0px 30px 0 rgba(184,184,184,0.17);
+                font-weight: bold;
+                transition: all ease .6s;
+                //border: 1px solid #F84141;
                 border-radius: 6px;
                 cursor: pointer;
             }
-            .router-link-exact-active{
+
+            .router-link-exact-active {
                 color: #fff;
-                background: #F84141;
+                background: #3cadee;
+                box-shadow: 1px 2px 18px 0 #3cadee;
                 border-radius: 6px;
             }
         }
 
         .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            width: calc(100% - calc(24rem / 96));
+            height: calc(124rem / 96);
+            line-height: calc(124rem / 96);
             padding: 0 calc(12rem / 96);
+            margin: 0 auto;
             box-sizing: border-box;
+            background: rgba(255,255,255,.8);
+            box-shadow: 1px 2px 18px 0 rgba(184,184,184,0.17);
+            border-radius: 4px;
+            .bottom-nav-item{
+                font-size: calc(24rem / 96);
+                cursor:pointer;
+            }
         }
     }
 </style>

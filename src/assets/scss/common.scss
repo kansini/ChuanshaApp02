@@ -27,9 +27,8 @@ a:active {
 /* 基础布局 */
 .row {
   width: 100%;
-  margin: 0 auto calc(24rem / 96) auto;
-  padding: 0 calc(12rem / 96);
-  box-sizing: border-box;
+  margin: 0 auto;
+
 }
 
 .row::after {

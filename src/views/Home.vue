@@ -7,18 +7,30 @@
             <div class="right">
                 <div class="row">
                     <router-link tag="div" to="/regionalpb" class="nav-item-01">
+                        <div class="icon">
+                            <img src="../../public/img/icons/ico-quyuhua.svg" alt="">
+                        </div>
                         区域化党建
                     </router-link>
                     <router-link tag="div" to="/" class="nav-item-02">
+                        <div class="icon">
+                            <img src="../../public/img/icons/ico-news.svg" alt="">
+                        </div>
                         要闻速递
                     </router-link>
                 </div>
                 <div class="row">
                     <div class="nav-item-03">
+                        <div class="icon" style="">
+                            <img src="../../public/img/icons/ico-liangxin.svg" alt="">
+                        </div>
                         “两新”党建
                     </div>
                     <div class="nav-item-right">
                         <div class="nav-item-04">
+                            <div class="icon">
+                                <img src="../../public/img/icons/ico-tongzhan.svg" alt="">
+                            </div>
                             宣传统战
                         </div>
                         <div class="nav-item-05">
@@ -48,7 +60,7 @@
 <style lang="scss" scoped>
     .home {
         width: 100%;
-        height: 100vh;
+        //height: 100vh;
 
         .mainNav {
             width: calc(1680rem / 96);
@@ -104,10 +116,21 @@
                         position: relative;
                         border-radius: 10px;
                         color: #fff;
-                        font-size: calc(28rem / 96);
+                        font-size: calc(30rem / 96);
                         cursor: pointer;
                         text-align: center;
                         overflow: hidden;
+                        transition: all ease .6s;
+
+                        .icon {
+                            width: calc(120rem / 96);
+                            height: calc(120rem / 96);
+
+                            img {
+                                width: 100%;
+                            }
+                        }
+
 
                         &::before,
                         &::after {
@@ -119,12 +142,30 @@
                     }
 
                     .nav-item-01 {
+                        position: relative;
                         width: calc(538rem / 96);
                         height: calc(230rem / 96);
                         line-height: calc(230rem / 96);
                         margin-right: calc(24rem / 96);
-                        background: #3cadee;
+                        background: rgba(60, 173, 238, .9);
                         margin-bottom: calc(24rem / 96);
+                        padding-left: calc(48rem / 96);
+                        box-sizing: border-box;
+                        box-shadow: 0 0 20px rgba(60, 173, 238, .5);
+
+                        &:hover {
+                            background: rgba(60, 173, 238, 1);
+                            box-shadow: 0 0 20px rgba(60, 173, 238, 1);
+                        }
+
+
+                        .icon {
+                            position: absolute;
+                            width: calc(96rem / 96);
+                            height: calc(96rem / 96);
+                            top: calc(-56rem / 96);
+                            left: calc(80rem / 96);
+                        }
 
                         &::before {
                             top: calc(-48rem / 96);
@@ -148,9 +189,23 @@
                     .nav-item-02 {
                         width: calc(198rem / 96);
                         height: calc(230rem / 96);
-                        line-height: calc(320rem / 96);
-                        background: #f7ae6c;
+                        //line-height: calc(320rem / 96);
+                        background: rgba(247, 174, 108, .9);
                         margin-bottom: calc(24rem / 96);
+                        box-shadow: 0 0 20px rgba(247, 174, 108, .6);
+
+                        &:hover {
+                            background: rgba(247, 174, 108, 1);
+                            box-shadow: 0 0 30px rgba(247, 174, 108, 1);
+                        }
+
+
+                        .icon {
+                            width: calc(64rem / 96);
+                            height: calc(64rem / 96);
+                            margin: calc(48rem / 96) auto calc(24rem / 96);
+
+                        }
 
                         &::after {
                             top: calc(96rem / 96);
@@ -165,9 +220,15 @@
                     .nav-item-03 {
                         width: calc(314rem / 96);
                         height: calc(346rem / 96);
-                        line-height: calc(500rem / 96);
+                        //line-height: calc(500rem / 96);
                         margin-right: calc(24rem / 96);
                         background: #f07879;
+
+                        .icon {
+                            margin: calc(64rem / 96) auto calc(32rem / 96);
+
+                        }
+
 
                         &::before {
                             top: calc(-298rem / 96);
@@ -191,10 +252,22 @@
                     .nav-item-04 {
                         width: calc(198rem / 96);
                         height: calc(166rem / 96);
-                        line-height: calc(240rem / 96);
+                        //line-height: calc(240rem / 96);
                         margin-right: calc(24rem / 96);
-                        background: #3fcaac;
+                        background: rgba(63, 202, 172, .8);
                         margin-bottom: calc(24rem / 96);
+                        box-shadow: 0 0 20px rgba(63, 202, 172, .6);
+
+                        &:hover {
+                            background: rgba(63, 202, 172, 1);
+                            box-shadow: 0 0 30px rgba(63, 202, 172, 1);
+                        }
+                        .icon {
+                            width: calc(64rem / 96);
+                            height: calc(64rem / 96);
+                            margin: calc(24rem / 96) auto calc(16rem / 96);
+
+                        }
 
                         &::after {
                             top: calc(58rem / 96);
