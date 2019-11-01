@@ -121,12 +121,13 @@
                         float: left;
                         position: relative;
                         border-radius: 10px;
-                        color: #fff;
+                        color: rgba(255,255,255,.9);
                         font-family: "fzht";
-                        font-size: calc(30rem / 96);
+                        font-size: calc(32rem / 96);
                         cursor: pointer;
                         text-align: center;
                         overflow: hidden;
+                        box-sizing: border-box;
                         transition: all ease .6s;
 
                         .icon {
@@ -149,14 +150,13 @@
                     }
 
                     .nav-item-01 {
-                         width: calc(538rem / 96);
+                        width: calc(538rem / 96);
                         height: calc(230rem / 96);
                         line-height: calc(230rem / 96);
                         margin-right: calc(24rem / 96);
                         background: rgba(60, 173, 238, .9);
                         margin-bottom: calc(24rem / 96);
                         padding-left: calc(48rem / 96);
-                        box-sizing: border-box;
                         box-shadow: 0 0 20px rgba(60, 173, 238, .5);
 
                         &:hover {
@@ -207,9 +207,9 @@
 
 
                         .icon {
-                            width: calc(64rem / 96);
-                            height: calc(64rem / 96);
-                            margin: calc(48rem / 96) auto calc(24rem / 96);
+                            width: calc(60rem / 96);
+                            height: calc(60rem / 96);
+                            margin: calc(56rem / 96) auto calc(24rem / 96);
 
                         }
 
@@ -314,8 +314,7 @@
                         line-height: calc(152rem / 96);
                         background: rgba(206, 135, 194, .9);
                         padding-left: calc(80rem / 96);
-                        box-sizing: border-box;
-                        box-shadow: 0 0 10px rgba(206, 135, 194, .5);
+                       box-shadow: 0 0 10px rgba(206, 135, 194, .5);
 
                         &:hover {
                             background: rgba(206, 135, 194, 1);
