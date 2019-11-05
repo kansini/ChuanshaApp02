@@ -15,13 +15,6 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="bottom-nav" >
-                <router-link tag="div" :to="item.path" class="bottom-nav-item" v-for="(item,index) in bottomNav" :key="index">
-                    {{item.name}}
-                </router-link>
-            </div>
-        </div>
 
     </div>
 </template>
@@ -86,6 +79,9 @@
 
             }
         },
+        created() {
+            this.$parent.init('/promotionAssociation')
+        }
     }
 </script>
 
@@ -98,9 +94,9 @@
     }
 
     #regionalPB {
-        width: calc(1704rem / 96);
-        height: calc(870rem / 96);
-        margin: 0 auto;
+        width: 100%;
+        padding:calc(64rem / 96) calc(40rem / 96);
+        box-sizing: border-box;
         background: rgba(255, 255, 255, 0);
 
         .sub-nav {
@@ -119,8 +115,8 @@
                 line-height: calc(104rem / 96);
                 text-align: center;
                 color: #666;
-                background: rgba(255,255,255,.8);
-                box-shadow: 0px 0px 30px 0 rgba(184,184,184,0.17);
+                background: rgba(255, 255, 255, .8);
+                box-shadow: 0px 0px 30px 0 rgba(184, 184, 184, 0.17);
                 font-weight: bold;
                 transition: all ease .6s;
                 //border: 1px solid #F84141;
@@ -145,12 +141,13 @@
             padding: 0 calc(12rem / 96);
             margin: 0 auto;
             box-sizing: border-box;
-            background: rgba(255,255,255,.8);
-            box-shadow: 1px 2px 18px 0 rgba(184,184,184,0.17);
+            background: rgba(255, 255, 255, .8);
+            box-shadow: 1px 2px 18px 0 rgba(184, 184, 184, 0.17);
             border-radius: 4px;
-            .bottom-nav-item{
+
+            .bottom-nav-item {
                 font-size: calc(24rem / 96);
-                cursor:pointer;
+                cursor: pointer;
             }
         }
     }

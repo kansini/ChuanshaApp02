@@ -5,7 +5,7 @@
                 <div class="video"></div>
             </div>
             <div class="right">
-                <shortcut />
+                <shortcut/>
             </div>
         </div>
     </div>
@@ -28,6 +28,7 @@
             handleItem01() {
                 this.isOpen = true
             }
+
         }
 
     }
@@ -84,7 +85,6 @@
                         content: '';
                         clear: both;
                     }
-
 
 
                 }

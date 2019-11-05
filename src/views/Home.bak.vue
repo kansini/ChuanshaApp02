@@ -373,16 +373,14 @@
         }
 
         @keyframes open {
-            10%{
+            10% {
                 top: 0;
             }
             30% {
-
                 height: 100vh;
 
             }
-
-            100% {
+            90% {
                 top: 0;
                 height: 100vh;
                 left: 0;
@@ -390,8 +388,8 @@
                 border-radius: 0;
                 box-shadow: 0 0 0px rgba(60, 173, 238, 0);
             }
-            100%{
-
+            100% {
+                background: #fff;
             }
 
         }
