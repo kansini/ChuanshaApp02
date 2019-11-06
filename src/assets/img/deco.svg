@@ -3,8 +3,15 @@
     <!-- Generator: Sketch 59 (86127) - https://sketch.com -->
     <title>deco</title>
     <desc>Created with Sketch.</desc>
-    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.200000003">
-        <g id="桌面端-HD" fill="#FFFFFF">
+    <defs>
+        <linearGradient x1="94.6473475%" y1="35.1027672%" x2="36.5771329%" y2="76.8688068%" id="linearGradient-1">
+            <stop stop-color="#FFFFFF" stop-opacity="0.2" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.5" offset="48.1313345%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0.1" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="桌面端-HD" fill="url(#linearGradient-1)">
             <path d="M533.244525,808.634727 C937.311269,705.114535 926.302327,578.897421 979.59403,369.796915 C1032.88573,160.696409 889.283355,-98.9151017 367.431344,-154.645933 C-154.420666,-210.376765 -419.299123,59.9889653 -121.25083,340.300171 C176.797463,620.611376 129.177781,912.15492 533.244525,808.634727 Z" id="deco"></path>
         </g>
     </g>

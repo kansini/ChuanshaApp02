@@ -82,29 +82,15 @@
 
 <style lang="scss" scoped>
     #regionalPB {
-        position: relative;
         width: 100%;
-        // padding: calc(64rem / 96) 0;
         box-sizing: border-box;
         background: rgba(255, 255, 255, 0);
-        animation: fadeIn 2s forwards;
+        animation: fadeIn 1s forwards;
+        background: url("../../assets/img/deco.svg") no-repeat 0 0;
+        background-size: 60%;
 
-        &::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: calc(-128rem / 96);
-            width: calc(1236rem / 96);
-            height: calc(992rem / 96);
-            background: url("../../assets/img/deco.svg") no-repeat 0 0;
-            background-size: 100%;
-            z-index: 999;
-        }
 
         .header {
-            position: fixed;
-            left: 0;
-            top: 0;
             width: 100%;
             height: 64px;
             line-height: 64px;
@@ -112,10 +98,11 @@
             font-size: 16px;
             background: rgba(255, 255, 255, 0.1);
             box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.05);
-            z-index: 1000;
+
 
             .sub-nav {
                 display: flex;
+
                 justify-content: space-between;
                 width: 60%;
                 margin: 0 16px;
@@ -132,10 +119,7 @@
                 }
 
                 .router-link-exact-active {
-                    background: #0086D4;
-                    //background: rgba(255, 255, 255, .15);
-                    //font-size: calc(26rem / 96);
-                    //font-weight: bold;
+                    background: rgba(0,134,212,.9);
                     transition: all ease .6s;
 
                     &::before {
@@ -145,7 +129,7 @@
                         bottom: 0;
                         width: 100%;
                         height: 2px;
-                        background: rgba(255, 255, 255, 1);
+                        background: rgba(255, 255, 255, .9);
                         background-size: 100%;
 
                     }
@@ -159,16 +143,17 @@
             width: calc(1520rem / 96);
             height: calc(100vh - 80px);
             overflow: scroll;
-            margin: 88px auto 0 auto;
+            margin: 16px auto 0 auto;
             box-sizing: border-box;
             background: rgba(255, 255, 255, .9);
             border-radius: 8px 8px 0 0;
+            z-index: 3;
         }
 
     }
 
     @keyframes fadeIn {
-        0%{
+        0%,30% {
             opacity: 0;
         }
         100% {
