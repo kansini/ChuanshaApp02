@@ -1,21 +1,16 @@
 <template>
     <div id="regionalPB">
-        <div class="row">
-            <div class="col-5">
-                <div class="sub-nav">
-                    <router-link tag="div" class="sub-nav-item" :to="item.path" v-for="(item,index) in subNav"
-                                 :key="index">
-                        {{item.name}}
-                    </router-link>
-                </div>
-            </div>
-            <div class="col-19">
-                <div class="content" style="width: 100%;height: calc(734rem / 96);background: rgba(255,255,255,.8)">
-                    <router-view></router-view>
-                </div>
+        <div class="header">
+            <div class="sub-nav">
+                <router-link tag="div" class="sub-nav-item" :to="item.path" v-for="(item,index) in subNav"
+                             :key="index">
+                    {{item.name}}
+                </router-link>
             </div>
         </div>
-
+        <div class="content">
+            <router-view/>
+        </div>
     </div>
 </template>
 
@@ -88,67 +83,71 @@
 <style lang="scss" scoped>
     .row {
         width: 100%;
-        margin: 0 auto calc(24rem / 96) auto;
+        margin: calc(24rem / 96) auto;
         padding: 0 calc(12rem / 96);
         box-sizing: border-box;
     }
 
     #regionalPB {
         width: 100%;
-        padding:calc(64rem / 96) calc(40rem / 96);
+        // padding: calc(64rem / 96) 0;
         box-sizing: border-box;
         background: rgba(255, 255, 255, 0);
 
-        .sub-nav {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+        .header {
             width: 100%;
-            height: calc(734rem / 96);
-            font-size: calc(24rem / 96);
-            color: #000;
+            height: 64px;
+            line-height: 64px;
+            color: #fff;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.05);
 
+            .sub-nav {
+                display: flex;
+                justify-content: space-between;
+                width: 60%;
+                margin: 0 16px;
+                font-family: 'ping';
 
-            .sub-nav-item {
-                width: 100%;
-                height: calc(104rem / 96);
-                line-height: calc(104rem / 96);
-                text-align: center;
-                color: #666;
-                background: rgba(255, 255, 255, .8);
-                box-shadow: 0px 0px 30px 0 rgba(184, 184, 184, 0.17);
-                font-weight: bold;
-                transition: all ease .6s;
-                //border: 1px solid #F84141;
-                border-radius: 6px;
-                cursor: pointer;
+                .sub-nav-item {
+                    font-size: calc(20rem / 96);
+                    position: relative;
+                    text-align: center;
+                    padding: 0 calc(24rem / 96);
+                    box-sizing: border-box;
+                    color: #fff;
+                    transition: all ease .6s;
+                    cursor: pointer;
+                }
+
+                .router-link-exact-active {
+                    background: #0086D4;
+                    //background: rgba(255, 255, 255, .15);
+                    //font-size: calc(26rem / 96);
+                    //font-weight: bold;
+                    transition: all ease .6s;
+
+                    &::before {
+                        position: absolute;
+                        content: '';
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        height: 2px;
+                        background: rgba(255, 255, 255, 1);
+                        background-size: 100%;
+
+                    }
+                }
             }
 
-            .router-link-exact-active {
-                color: #fff;
-                background: #3cadee;
-                box-shadow: 1px 2px 18px 0 #3cadee;
-                border-radius: 6px;
-            }
         }
 
-        .bottom-nav {
-            display: flex;
-            justify-content: space-around;
-            width: calc(100% - calc(24rem / 96));
-            height: calc(124rem / 96);
-            line-height: calc(124rem / 96);
-            padding: 0 calc(12rem / 96);
-            margin: 0 auto;
+        .content {
+            padding: calc(24rem / 96);
             box-sizing: border-box;
-            background: rgba(255, 255, 255, .8);
-            box-shadow: 1px 2px 18px 0 rgba(184, 184, 184, 0.17);
-            border-radius: 4px;
-
-            .bottom-nav-item {
-                font-size: calc(24rem / 96);
-                cursor: pointer;
-            }
         }
+
     }
 </style>

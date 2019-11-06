@@ -81,8 +81,8 @@
             position: absolute;
             top: 0px;
             right: 0px;
-            width: 56px;
-            height: 56px;
+            width: 64px;
+            height: 64px;
             background: url("../../public/img/icons/ico-close.svg") no-repeat center;
             background-size: 16px;
             opacity: .6;
@@ -147,6 +147,7 @@
             box-shadow: 0 0 20px rgba(60, 173, 238, .5);
 
             &:hover {
+                background: #0086D4;
                 box-shadow: 0 0 30px rgba(60, 173, 238, 1);
             }
 
@@ -364,6 +365,7 @@
                 width: 100%;
                 height: 100%;
                 border-radius: 0;
+                padding: 0;
                 box-shadow: 0 0 0px rgba(60, 173, 238, 0);
             }
 
