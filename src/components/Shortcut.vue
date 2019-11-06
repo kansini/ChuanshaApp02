@@ -101,7 +101,6 @@
             position: relative;
             border-radius: 8px;
             color: rgba(255, 255, 255, .9);
-            font-family: "fzht";
             font-size: calc(30rem / 96);
             cursor: pointer;
             text-align: center;
@@ -121,6 +120,7 @@
             }
 
             span {
+                font-family: "fzht";
                 opacity: 1;
                 transition: all ease .2s;
             }

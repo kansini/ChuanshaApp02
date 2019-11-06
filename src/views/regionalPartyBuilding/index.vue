@@ -81,20 +81,30 @@
 </script>
 
 <style lang="scss" scoped>
-    .row {
-        width: 100%;
-        margin: calc(24rem / 96) auto;
-        padding: 0 calc(12rem / 96);
-        box-sizing: border-box;
-    }
-
     #regionalPB {
+        position: relative;
         width: 100%;
         // padding: calc(64rem / 96) 0;
         box-sizing: border-box;
         background: rgba(255, 255, 255, 0);
+        animation: fadeIn 2s forwards;
+
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: calc(-128rem / 96);
+            width: calc(1236rem / 96);
+            height: calc(992rem / 96);
+            background: url("../../assets/img/deco.svg") no-repeat 0 0;
+            background-size: 100%;
+            z-index: 999;
+        }
 
         .header {
+            position: fixed;
+            left: 0;
+            top: 0;
             width: 100%;
             height: 64px;
             line-height: 64px;
@@ -102,13 +112,13 @@
             font-size: 16px;
             background: rgba(255, 255, 255, 0.1);
             box-shadow: 0 2px 20px 0 rgba(0, 0, 0, 0.05);
+            z-index: 1000;
 
             .sub-nav {
                 display: flex;
                 justify-content: space-between;
                 width: 60%;
                 margin: 0 16px;
-                font-family: 'ping';
 
                 .sub-nav-item {
                     font-size: calc(20rem / 96);
@@ -146,7 +156,23 @@
 
         .content {
             padding: calc(24rem / 96);
+            width: calc(1520rem / 96);
+            height: calc(100vh - 80px);
+            overflow: scroll;
+            margin: 88px auto 0 auto;
             box-sizing: border-box;
+            background: rgba(255, 255, 255, .9);
+            border-radius: 8px 8px 0 0;
+        }
+
+    }
+
+    @keyframes fadeIn {
+        0%{
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
         }
 
     }
