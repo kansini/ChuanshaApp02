@@ -7,6 +7,7 @@
         <div :class="['shortcut-item-0' + item.id,{open:current == index + 1}]" v-for="(item,index) in shortcut"
              :key="index" @click="open(index,item.path)">
             <regionalPartyBuilding v-if="current == 1"/>
+            <news v-if="current == 2" />
             <div class="icon">
                 <img :src="'./img/icons/ico-' + item.icon + '.svg' ">
             </div>
@@ -17,10 +18,14 @@
 
 <script>
     import regionalPartyBuilding from '@/views/regionalPartyBuilding'
+    import news from '@/views/News'
 
     export default {
         name: "shortcut",
-        components: {regionalPartyBuilding},
+        components: {
+            regionalPartyBuilding,
+            news
+        },
         data() {
             return {
                 current: 0,
