@@ -3,7 +3,6 @@
         <transition name="fadeIn">
             <div class="close" @click="close()" v-if="current > 0"></div>
         </transition>
-
         <div :class="['shortcut-item-0' + item.id,{open:current == index + 1}]" v-for="(item,index) in shortcut"
              :key="index" @click="open(index,item.path)">
             <regionalPartyBuilding v-if="current == 1"/>

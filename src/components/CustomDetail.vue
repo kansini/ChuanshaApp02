@@ -1,15 +1,15 @@
 <template>
-    <div id="news">
-        <custom-list />
+    <div class="custom-detail">
+
     </div>
 </template>
 
 <script>
     export default {
-        name: "News"
+        name: "CustomDetail"
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 
 </style>
