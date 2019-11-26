@@ -6,7 +6,6 @@
         <div :class="['shortcut-item-0' + item.id,{open:current == index + 1}]" v-for="(item,index) in shortcut"
              :style="{background:item.color}"
              :key="index" @click="open(index,item.path)">
-            <regionalPartyBuilding v-if="current == 1"/>
             <custom-list :title=item.title :color="item.color"
                          :list-data="item.listData"
                          v-if="current == index + 1"/>
@@ -14,7 +13,7 @@
                 <img :src="'./img/icons/ico-' + item.icon + '.svg' ">
             </div>
             <span>{{item.title}}</span>
-        </div>k
+        </div>
     </div>
 </template>
 
@@ -29,78 +28,11 @@
         data() {
             return {
                 current: 0,
-                shortcut: [
-                    {
-                        "id": "1",
-                        "title": "区域化党建",
-                        "icon": "quyuhua",
-                        "path": "promotionAssociation",
-                        "color": "rgba(60, 173, 238, 1)"
-                    },
-                    {
-                        "id": "2",
-                        "title": "要闻速递",
-                        "icon": "news",
-                        "color": "rgba(247, 174, 108, 1)",
-                        "listData": {
-                            "rules": [
-                                {
-                                    "prop": "title",
-                                    "label": "标题",
-                                    "width": 50
-                                },
-                                {
-                                    "prop": "source",
-                                    "label": "来源",
-                                    "width": 20
-                                },
-                                {
-                                    "prop": "date",
-                                    "label": "发布日期",
-                                    "width": 10
-                                }
-                            ],
-                            "data": [
-                                {
-                                    "title": "川沙新镇的上海旅游亮点",
-                                    "source": "川沙新镇",
-                                    "date": "2019-10-18"
-                                },
-                                {
-                                    "title": "党委书记吕雪城为川沙新镇党员干部上专题党课",
-                                    "source": "川沙新镇",
-                                    "date": "2019-10-18"
-                                }
-                            ]
-                        }
-
-                    },
-                    {
-                        "id": "3",
-                        "title": "“两新”党建",
-                        "icon": "liangxin",
-                        "color": "rgba(239, 95, 96, 1)"
-                    },
-                    {
-                        "id": "4",
-                        "title": "宣传统战",
-                        "icon": "tongzhan",
-                        "color": "rgba(63, 202, 172, 1)"
-                    },
-                    {
-                        "id": "5",
-                        "title": "留言堂",
-                        "icon": "guestbook",
-                        "color": "rgba(131, 121, 241, 1)"
-                    },
-                    {
-                        "id": "6",
-                        "title": "社会组织党建",
-                        "icon": "so",
-                        "color": "rgba(206, 135, 194, 1)"
-                    }
-                ]
+                shortcut: []
             }
+        },
+        mounted() {
+            this.getData()
         },
         methods: {
             open(index, path) {
@@ -108,12 +40,12 @@
             },
             close() {
                 this.current = 0
-                this.$router.push('/')
+               // this.$router.push('/')
             },
-            init(path) {
-                this.$router.push(path)
+            getData() {
+                this.$axios.get('data.json')
+                    .then(res => this.shortcut = res.data)
             }
-
         }
     }
 </script>
