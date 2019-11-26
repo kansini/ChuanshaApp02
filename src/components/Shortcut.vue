@@ -4,9 +4,10 @@
             <div class="close" @click="close()" v-if="current > 0"></div>
         </transition>
         <div :class="['shortcut-item-0' + item.id,{open:current == index + 1}]" v-for="(item,index) in shortcut"
+             :style="{background:item.color}"
              :key="index" @click="open(index,item.path)">
             <regionalPartyBuilding v-if="current == 1"/>
-            <news v-if="current == 2" />
+            <custom-list :title=item.title :color="item.color" v-if="current == index + 1"/>
             <div class="icon">
                 <img :src="'./img/icons/ico-' + item.icon + '.svg' ">
             </div>
@@ -33,32 +34,38 @@
                         "id": "1",
                         "title": "区域化党建",
                         "icon": "quyuhua",
-                        "path": "promotionAssociation"
+                        "path": "promotionAssociation",
+                        "color": "rgba(60, 173, 238, 1)"
                     },
                     {
                         "id": "2",
                         "title": "要闻速递",
-                        "icon": "news"
+                        "icon": "news",
+                        "color": "rgba(247, 174, 108, 1)"
                     },
                     {
                         "id": "3",
                         "title": "“两新”党建",
-                        "icon": "liangxin"
+                        "icon": "liangxin",
+                        "color": "rgba(239, 95, 96, 1)"
                     },
                     {
                         "id": "4",
                         "title": "宣传统战",
-                        "icon": "tongzhan"
+                        "icon": "tongzhan",
+                        "color": "rgba(63, 202, 172, 1)"
                     },
                     {
                         "id": "5",
                         "title": "留言堂",
-                        "icon": "guestbook"
+                        "icon": "guestbook",
+                        "color": "rgba(131, 121, 241, 1)"
                     },
                     {
                         "id": "6",
                         "title": "社会组织党建",
-                        "icon": "so"
+                        "icon": "so",
+                        "color": "rgba(206, 135, 194, 1)"
                     }
                 ]
             }
@@ -146,7 +153,7 @@
             padding-top: calc(104rem / 96);
             padding-left: calc(48rem / 96);
             margin-right: calc(24rem / 96);
-            background: rgba(60, 173, 238, 1);
+            // background: rgba(60, 173, 238, 1);
             margin-bottom: calc(24rem / 96);
             box-shadow: 0 0 20px rgba(60, 173, 238, .5);
 
@@ -186,7 +193,7 @@
         .shortcut-item-02 {
             width: calc(198rem / 96);
             height: calc(230rem / 96);
-            background: rgba(247, 174, 108, 1);
+            //background: rgba(247, 174, 108, 1);
             margin-bottom: calc(24rem / 96);
             box-shadow: 0 0 20px rgba(247, 174, 108, .6);
 
@@ -216,7 +223,7 @@
             width: calc(314rem / 96);
             height: calc(346rem / 96);
             margin-right: calc(24rem / 96);
-            background: rgba(239, 95, 96, 1);
+            //background: rgba(239, 95, 96, 1);
             box-shadow: 0 0 20px rgba(239, 95, 96, .5);
 
             &:hover {
@@ -280,7 +287,7 @@
         .shortcut-item-05 {
             width: calc(198rem / 96);
             height: calc(166rem / 96);
-            background: rgba(131, 121, 241, 1);
+            //background: rgba(131, 121, 241, 1);
             margin-bottom: calc(24rem / 96);
             box-shadow: 0 0 10px rgba(131, 121, 241, .5);
 
@@ -301,7 +308,7 @@
             height: calc(152rem / 96);
             padding-top: calc(64rem / 96);
             padding-left: calc(80rem / 96);
-            background: rgba(206, 135, 194, 1);
+            //background: rgba(206, 135, 194, 1);
             box-shadow: 0 0 10px rgba(206, 135, 194, .5);
 
             &:hover {
@@ -372,11 +379,7 @@
                 padding: 0;
                 box-shadow: 0 0 0px rgba(60, 173, 238, 0);
             }
-
-
         }
-
-
     }
 
 </style>

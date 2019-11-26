@@ -152,13 +152,4 @@
 
     }
 
-    @keyframes fadeIn {
-        0%,30% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-
-    }
 </style>

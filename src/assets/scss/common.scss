@@ -182,7 +182,12 @@ a:active {
   transform: translateY(-10%)
 }
 
-//*Vant ui reset*//
-.van-cell {
- padding: 12px 16px;
+@keyframes fadeIn {
+  0%, 20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+
 }
