@@ -7,24 +7,24 @@
              :style="{background:item.color}"
              :key="index" @click="open(index,item.path)">
             <regionalPartyBuilding v-if="current == 1"/>
-            <custom-list :title=item.title :color="item.color" v-if="current == index + 1"/>
+            <custom-list :title=item.title :color="item.color"
+                         :list-data="item.listData"
+                         v-if="current == index + 1"/>
             <div class="icon">
                 <img :src="'./img/icons/ico-' + item.icon + '.svg' ">
             </div>
             <span>{{item.title}}</span>
-        </div>
+        </div>k
     </div>
 </template>
 
 <script>
     import regionalPartyBuilding from '@/views/regionalPartyBuilding'
-    import news from '@/views/News'
 
     export default {
         name: "shortcut",
         components: {
             regionalPartyBuilding,
-            news
         },
         data() {
             return {
@@ -41,7 +41,39 @@
                         "id": "2",
                         "title": "要闻速递",
                         "icon": "news",
-                        "color": "rgba(247, 174, 108, 1)"
+                        "color": "rgba(247, 174, 108, 1)",
+                        "listData": {
+                            "rules": [
+                                {
+                                    "prop": "title",
+                                    "label": "标题",
+                                    "width": 50
+                                },
+                                {
+                                    "prop": "source",
+                                    "label": "来源",
+                                    "width": 20
+                                },
+                                {
+                                    "prop": "date",
+                                    "label": "发布日期",
+                                    "width": 10
+                                }
+                            ],
+                            "data": [
+                                {
+                                    "title": "川沙新镇的上海旅游亮点",
+                                    "source": "川沙新镇",
+                                    "date": "2019-10-18"
+                                },
+                                {
+                                    "title": "党委书记吕雪城为川沙新镇党员干部上专题党课",
+                                    "source": "川沙新镇",
+                                    "date": "2019-10-18"
+                                }
+                            ]
+                        }
+
                     },
                     {
                         "id": "3",
