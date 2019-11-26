@@ -18,35 +18,6 @@ export default new Router({
             path: '/',
             name: 'home',
             component: Home,
-            children: [
-                {
-                    path: '/promotionAssociation',
-                    name: 'promotionAssociation',
-                    component: () => import('@/views/regionalPartyBuilding/PromotionAssociation')
-                },
-                {
-                    path: '/resourceList',
-                    name: 'resourceList',
-                    component: () => import('@/views/regionalPartyBuilding/ResourceList')
-                },
-                {
-                    path: '/projectList',
-                    name: 'projectList',
-                    component: () => import('@/views/regionalPartyBuilding/ProjectList')
-                },
-                {
-                    path: '/programme',
-                    name: 'programme',
-                    component: () => import('@/views/regionalPartyBuilding/Programme')
-                },
-                {
-                    path: '/activityHighlight',
-                    name: 'activityHighlight',
-                    component: () => import('@/views/regionalPartyBuilding/ActivityHighlight')
-                }
-            ]
-
-        },
-
+        }
     ]
 })

@@ -140,30 +140,6 @@
                 text-indent: 2em;
             }
         }
-
-        .btn-group {
-            position: fixed;
-            bottom: 24px;
-            left: 0;
-            width: 100%;
-            display: flex;
-            color: #fff;
-            justify-content: center;
-
-            div {
-                font-size: calc(20rem / 96);
-                padding: 12px 32px;
-                border-radius: 8px;
-                box-sizing: border-box;
-
-                &:not(:first-child) {
-                    margin-left: 48px;
-                }
-            }
-
-        }
-
-
     }
 
 </style>

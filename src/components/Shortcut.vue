@@ -5,10 +5,12 @@
         </transition>
         <div :class="['shortcut-item-0' + item.id,{open:current == index + 1}]" v-for="(item,index) in shortcut"
              :style="{background:item.color}"
-             :key="index" @click="open(index,item.path)">
+             :key="index" @click="open(index)">
+            <guestbookList v-if="current == 5" :color="item.color"/>
             <custom-list :title=item.title :color="item.color"
                          :list-data="item.listData"
-                         v-if="current == index + 1"/>
+                         v-if="current == index + 1 && current != 5"/>
+
             <div class="icon">
                 <img :src="'./img/icons/ico-' + item.icon + '.svg' ">
             </div>
@@ -18,12 +20,11 @@
 </template>
 
 <script>
-    import regionalPartyBuilding from '@/views/regionalPartyBuilding'
-
+    import guestbookList from '@/components/GuestbookList'
     export default {
         name: "shortcut",
         components: {
-            regionalPartyBuilding,
+            guestbookList
         },
         data() {
             return {
@@ -35,12 +36,11 @@
             this.getData()
         },
         methods: {
-            open(index, path) {
+            open(index) {
                 this.current = index + 1
             },
             close() {
                 this.current = 0
-               // this.$router.push('/')
             },
             getData() {
                 this.$axios.get('data.json')
