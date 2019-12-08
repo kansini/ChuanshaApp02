@@ -9,7 +9,7 @@
             <guestbookList v-if="current == 5" :color="item.color"/>
             <custom-list :title=item.title :color="item.color"
                          :list-data="item.listData"
-                         v-if="current == index + 1 && current != 5"/>
+                         v-if="current == index + 1"/>
 
             <div class="icon">
                 <img :src="'./img/icons/ico-' + item.icon + '.svg' ">
