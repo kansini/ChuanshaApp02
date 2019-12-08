@@ -78,6 +78,9 @@
         font-size: 14px;
         color: #0086D4;
         line-height: 36px;
+        h1{
+            text-align: center;
+        }
         p{
             text-align: left;
         }

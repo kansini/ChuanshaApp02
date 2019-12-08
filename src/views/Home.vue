@@ -1,5 +1,7 @@
 <template>
     <div class="home">
+        <pageLoader v-if="isLoading" :background="bgColor" :class="{quit:quit}"/>
+        <div class="btn-close" @click="close()" v-if="isLoading"></div>
         <div class="mainNav">
             <div class="left">
                 <div class="video"></div>
@@ -13,29 +15,74 @@
 
 <script>
     import shortcut from '@/components/Shortcut'
+    import pageLoader from '@/components/PageLoader'
 
     export default {
         name: 'home',
         components: {
-            shortcut
+            shortcut,
+            pageLoader
         },
         data() {
             return {
-                isOpen: false
+                isOpen: false,
+                isLoading: false,
+                bgColor: "",
+                quit: false,
             }
         },
         methods: {
-            handleItem01() {
-                this.isOpen = true
+            close() {
+                this.quit = true
+                setTimeout(() => {
+                    this.isLoading = false
+                    this.quit = false
+                }, 400)
             }
-
         }
-
     }
 </script>
 <style lang="scss" scoped>
     .home {
         width: 100%;
+
+        .btn-close {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 64px;
+            height: 64px;
+            cursor: pointer;
+            opacity: .85;
+            transform: scale(.65);
+            transition: all ease .5s;
+            z-index: 1000;
+
+            &:hover {
+                transform: scale(.8) rotate(90deg);
+                opacity: 1;
+            }
+
+            &::before,
+            &::after {
+                position: absolute;
+                left: 16px;
+                top: 31px;
+                content: '';
+                width: 32px;
+                height: 2px;
+                background: #fff;
+            }
+
+            &::before {
+                transform: rotate(45deg);
+            }
+
+            &::after {
+                transform: rotate(-45deg);
+            }
+        }
+
 
         .mainNav {
             width: calc(1680rem / 96);
@@ -92,6 +139,10 @@
 
         }
 
-
+        .quit {
+            width: 100%;
+            transform-origin: right center;
+            animation: qiut linear .5s forwards;
+        }
     }
 </style>

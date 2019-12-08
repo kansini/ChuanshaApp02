@@ -3,14 +3,11 @@
         <transition name="fadeIn">
             <div class="close" @click="close()" v-if="current > 0"></div>
         </transition>
-        <div :class="['shortcut-item-0' + item.id,{open:current == index + 1}]" v-for="(item,index) in shortcut"
-             :style="{background:item.color}"
-             :key="index" @click="open(index)">
-            <guestbookList v-if="current == 5" :color="item.color"/>
-            <custom-list :title=item.title :color="item.color"
-                         :list-data="item.listData"
-                         v-if="current == index + 1"/>
-
+        <div :class="'shortcut-item-0' + item.id" v-for="(item,index) in shortcut"
+             :style="{background:item.color}":key="index" @click="view(item.color,item.path)">
+            <!--            <custom-list :title=item.title :color="item.color"-->
+<!--                         :list-data="item.listData"-->
+<!--                         v-if="current == index + 1"/>-->
             <div class="icon">
                 <img :src="'./img/icons/ico-' + item.icon + '.svg' ">
             </div>
@@ -20,11 +17,14 @@
 </template>
 
 <script>
-    import guestbookList from '@/components/GuestbookList'
+    //import guestbookList from '@/components/GuestbookList'
+    import rpb from '@/views/regionalPartyBuilding'
+
     export default {
         name: "shortcut",
         components: {
-            guestbookList
+           // guestbookList,
+            rpb
         },
         data() {
             return {
@@ -45,7 +45,13 @@
             getData() {
                 this.$axios.get('data.json')
                     .then(res => this.shortcut = res.data)
+            },
+            view(color,path) {
+                this.$parent.isLoading = true
+                this.$parent.bgColor = color
+                this.$router.push(path)
             }
+
         }
     }
 </script>

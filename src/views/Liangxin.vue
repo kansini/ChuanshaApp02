@@ -1,10 +1,10 @@
 <template>
-    <custom-list :list-data="listData" color="#0086D4"/>
+    <custom-list title="“两新”党建"  :list-data="listData" color="rgba(239, 95, 96, 1)"/>
 </template>
 
 <script>
     export default {
-        name: "ResourceList",
+        name: "liangxin",
         data() {
             return {
                 "listData": {

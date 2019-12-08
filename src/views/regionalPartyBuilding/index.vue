@@ -41,41 +41,7 @@
                         path: '/activityHighlight'
                     }
                 ],
-                bottomNav: [
-                    {
-                        name: "首页",
-                        path: '/'
-                    },
-                    {
-                        name: "区域化党建",
-                        path: '/regionalpb'
-                    },
-                    {
-                        name: "要闻速递",
-                        path: '/news'
-                    },
-                    {
-                        name: "'两新'党建",
-                        path: '/liangxin'
-                    },
-                    {
-                        name: "统战宣传",
-                        path: '/tongzhan'
-                    },
-                    {
-                        name: "留言堂",
-                        path: '/guestBook'
-                    },
-                    {
-                        name: "社会组织党建",
-                        path: '/socialOrganisation'
-                    }
-                ]
-
             }
-        },
-        created() {
-            this.$parent.init('/promotionAssociation')
         }
     }
 </script>

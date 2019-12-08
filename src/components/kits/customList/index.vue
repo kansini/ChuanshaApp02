@@ -1,7 +1,7 @@
 <template>
     <div class="custom-list">
-        <div class="custom-list-title">{{title}}</div>
-        <div class="custom-list-content" v-if="!showDetail">
+        <div class="custom-list-title" v-if="title">{{title}}</div>
+        <div class="custom-list-content" :class="{hasTitle:title}" v-if="!showDetail">
             <div class="custom-list-item" :style="{color:color,borderColor:color}"
                  v-for="(row,index ) in listData.data" v-show="listData.data"
                  :key="index"
@@ -16,7 +16,7 @@
             </div>
         </div>
         <transition name="slideDown">
-            <div class="custom-detail-content" :style="{color:color}" v-show="showDetail">
+            <div class="custom-detail-content" :class="{hasTitle:title}" :style="{color:color}" v-show="showDetail">
                 <h1 v-if="detail.title">{{detail.title}}</h1>
                 <p v-if="detail.content">{{detail.content}}</p>
                 <div class="btn-group">
@@ -56,6 +56,28 @@
         data() {
             return {
                 showDetail: false,
+                subNav: [
+                    {
+                        name: "区域化党建促进会",
+                        path: 'promotionAssociation'
+                    },
+                    {
+                        name: "区域化党建资源清单",
+                        path: '/resourceList'
+                    },
+                    {
+                        name: "区域化党建项目清单",
+                        path: '/projectList'
+                    },
+                    {
+                        name: "区域化党建活动安排",
+                        path: '/programme'
+                    },
+                    {
+                        name: "区域化党建活动集锦",
+                        path: '/activityHighlight'
+                    }
+                ]
             }
         },
         methods: {
@@ -73,8 +95,8 @@
     .custom-list {
         width: 100%;
         background: rgba(255, 255, 255, 0);
-        animation: fadeIn 2s forwards;
-        background: url("../../assets/img/deco.svg") no-repeat 0 0;
+        animation: fadeIn .4s forwards;
+        background: url("../../../assets/img/deco.svg") no-repeat 0 0;
         background-size: 60%;
         text-align: left;
 
@@ -83,20 +105,25 @@
             height: calc(96rem / 96);
             line-height: calc(96rem / 96);
             font-size: 34px;
+            color: #fff;
             font-family: 'fzht';
             text-align: center;
             text-shadow: 2px 2px 2px rgba(255, 255, 255, .3);
         }
 
-        .custom-list-content {
+        .hasTitle {
             padding: calc(16rem / 96) calc(32rem / 96);
+            background: rgba(255, 255, 255, .9);
             width: calc(1520rem / 96);
-            height: 100vh;
+            height: calc(100vh - calc(96rem / 96));
+            box-sizing: border-box;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .custom-list-content {
+            height: calc(100vh - calc(144rem / 96));
             overflow: scroll;
             margin: 0 auto;
-            box-sizing: border-box;
-            background: rgba(255, 255, 255, .9);
-            border-radius: 8px 8px 0 0;
 
             .custom-list-item {
                 display: flex;
@@ -118,15 +145,19 @@
             }
         }
 
-        .custom-detail-content {
+        .custom-detail-content-has-title {
             padding: calc(16rem / 96) calc(32rem / 96);
+            background: rgba(255, 255, 255, .9);
             width: calc(1520rem / 96);
-            height: 100vh;
+            height: calc(100vh - calc(96rem / 96));
+            box-sizing: border-box;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .custom-detail-content {
+            height: calc(100vh - calc(144rem / 96));
             overflow: scroll;
             margin: 0 auto;
-            box-sizing: border-box;
-            background: rgba(255, 255, 255, .9);
-            border-radius: 8px 8px 0 0;
 
             h1 {
                 font-size: calc(38rem / 96);

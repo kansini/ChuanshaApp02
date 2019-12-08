@@ -12,12 +12,73 @@ Router.prototype.push = function push(location, onResolve, onReject) {
 Vue.use(Router)
 
 export default new Router({
-    //mode: 'history',
+    mode: 'history',
     routes: [
         {
             path: '/',
             name: 'home',
             component: Home,
-        }
+            children: [
+                {
+                    path: '/regionalPB',
+                    name: 'regionalPartyBuilding',
+                    component: () => import ('@/views/regionalPartyBuilding'),
+                    redirect: '/promotionAssociation',
+                    children: [
+                        {
+                            path: '/promotionAssociation',
+                            name: 'promotionAssociation',
+                            component: () => import('@/views/regionalPartyBuilding/PromotionAssociation')
+                        },
+                        {
+                            path: '/resourceList',
+                            name: 'resourceList',
+                            component: () => import('@/views/regionalPartyBuilding/ResourceList')
+                        },//
+                        {
+                            path: '/projectList',
+                            name: 'projectList',
+                            component: () => import('@/views/regionalPartyBuilding/ProjectList')
+                        },
+                        {
+                            path: '/programme',
+                            name: 'programme',
+                            component: () => import('@/views/regionalPartyBuilding/Programme')
+                        },
+                        {
+                            path: '/activityHighlight',
+                            name: 'activityHighlight',
+                            component: () => import('@/views/regionalPartyBuilding/ActivityHighlight')
+                        }
+                    ]
+                },
+                {
+                    path:'/guestBook',
+                    name:'guestBook',
+                    component: () => import('@/views/GuestBook')
+                },
+                {
+                    path:'/news',
+                    name:'news',
+                    component: () => import('@/views/News')
+                },
+                {
+                    path:'/liangxin',
+                    name:'liangxin',
+                    component: () => import('@/views/Liangxin') //
+                },
+                {
+                    path:'/tongzhan',
+                    name:'tongzhan',
+                    component: () => import('@/views/Tongzhan')
+                },
+                {
+                    path:'/so',
+                    name:'socialOrganization',
+                    component: () => import('@/views/SocialOrganization')
+                }
+            ]
+        },
+
     ]
 })

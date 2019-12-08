@@ -1,10 +1,10 @@
 <template>
-    <foto-list :foto-list="fotoList" color="#0086D4"/>
+    <foto-list title="社会组织党建"  :foto-list="fotoList" color="rgb(206, 135, 194)"/>
 </template>
 
 <script>
     export default {
-        name: "EventHighlight",
+        name: "SocialOrganization",
         data() {
             return {
                 fotoList: [
@@ -36,7 +36,6 @@
 
             }
         }
-
     }
 </script>
 

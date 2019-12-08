@@ -1,10 +1,10 @@
 <template>
-    <custom-list :list-data="listData" color="#0086D4"/>
+    <custom-list title="要闻速递"  :list-data="listData" color="rgb(247, 174, 108)"/>
 </template>
 
 <script>
     export default {
-        name: "ResourceList",
+        name: "news",
         data() {
             return {
                 "listData": {

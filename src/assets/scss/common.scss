@@ -153,6 +153,7 @@ a:active {
     padding: 12px 32px;
     border-radius: 8px;
     box-sizing: border-box;
+    cursor: pointer;
 
     &:not(:first-child) {
       margin-left: 48px;
@@ -204,12 +205,39 @@ a:active {
   opacity: 0;
   transform: translateY(-100%)
 }
+/*动画*/
+@keyframes loading {
+  0% {
+    width: 0;
+  }
+  60% {
+    width: 30%;
+  }
+  100% {
+    width: 100%;
+  }
+}
 
+@keyframes qiut {
+  0% {
+    transform: scaleX(1);
+  }
+  60% {
+    transform: scaleX(0.7);
+  }
+  100% {
+    transform: scaleX(0);
+  }
+
+
+}
 @keyframes fadeIn {
-  0%, 20% {
+  0%, 40% {
+    transform: scale(0);
     opacity: 0;
   }
   100% {
+    transform: scale(1);
     opacity: 1;
   }
 
