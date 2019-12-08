@@ -56,28 +56,6 @@
         data() {
             return {
                 showDetail: false,
-                subNav: [
-                    {
-                        name: "区域化党建促进会",
-                        path: 'promotionAssociation'
-                    },
-                    {
-                        name: "区域化党建资源清单",
-                        path: '/resourceList'
-                    },
-                    {
-                        name: "区域化党建项目清单",
-                        path: '/projectList'
-                    },
-                    {
-                        name: "区域化党建活动安排",
-                        path: '/programme'
-                    },
-                    {
-                        name: "区域化党建活动集锦",
-                        path: '/activityHighlight'
-                    }
-                ]
             }
         },
         methods: {

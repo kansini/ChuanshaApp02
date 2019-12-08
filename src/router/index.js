@@ -27,54 +27,54 @@ export default new Router({
                     children: [
                         {
                             path: '/promotionAssociation',
-                            name: 'promotionAssociation',
+                            name: 'promotionAssociation', //区域化党建促进会
                             component: () => import('@/views/regionalPartyBuilding/PromotionAssociation')
                         },
                         {
                             path: '/resourceList',
-                            name: 'resourceList',
+                            name: 'resourceList', //区域化党建资源清单
                             component: () => import('@/views/regionalPartyBuilding/ResourceList')
                         },//
                         {
                             path: '/projectList',
-                            name: 'projectList',
+                            name: 'projectList', //区域化党建项目清单
                             component: () => import('@/views/regionalPartyBuilding/ProjectList')
                         },
                         {
                             path: '/programme',
-                            name: 'programme',
+                            name: 'programme', //区域化党建活动安排
                             component: () => import('@/views/regionalPartyBuilding/Programme')
                         },
                         {
                             path: '/activityHighlight',
-                            name: 'activityHighlight',
+                            name: 'activityHighlight', //区域化党建活动集锦
                             component: () => import('@/views/regionalPartyBuilding/ActivityHighlight')
                         }
                     ]
                 },
                 {
                     path:'/guestBook',
-                    name:'guestBook',
+                    name:'guestBook', //留言堂
                     component: () => import('@/views/GuestBook')
                 },
                 {
                     path:'/news',
-                    name:'news',
+                    name:'news', //要闻速递
                     component: () => import('@/views/News')
                 },
                 {
                     path:'/liangxin',
-                    name:'liangxin',
+                    name:'liangxin', //“两新”党建
                     component: () => import('@/views/Liangxin') //
                 },
                 {
                     path:'/tongzhan',
-                    name:'tongzhan',
+                    name:'tongzhan', //宣传统战
                     component: () => import('@/views/Tongzhan')
                 },
                 {
                     path:'/so',
-                    name:'socialOrganization',
+                    name:'socialOrganization', //社会组织党建
                     component: () => import('@/views/SocialOrganization')
                 }
             ]
